@@ -1,0 +1,102 @@
+
+
+@import '../../styles/contants.scss';
+
+.wrapper {
+    .container {
+   
+        .heading {
+            width: 100%;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap; 
+            >:nth-child(2)
+            {
+                text-decoration: underline;
+                color: #c95107;
+                cursor: pointer;
+            }
+           }
+
+        .comments {
+            // fix for spacing between slides
+            .slider :global {
+                .slick-list {
+                    margin: 0 -7px;
+                    box-sizing: initial;
+                    padding: 80px 0px;
+                    overflow-y: visible;
+                    & .slick-slide>div {
+                        padding: 0 20px;
+                    }
+                    & .slick-slide.slick-active.slick-current + .slick-slide{
+                        @media (min-width: $lg) {
+                            transition: all 1000ms ease-out;
+                            scale: 1.1;
+                            transform: translateY(-30px)
+                        }
+                    }
+                }
+            }
+            .comment {
+                
+                box-shadow: rgb(0 0 0 / 5%) -3px 11px 13px 0px;
+               // border: 2px solid #e36414;
+                border: 0.5px solid #c95107;
+                padding: 2rem;
+                display: flex !important;
+                flex-direction: column;
+                gap: 1rem;
+                background:  linear-gradient(
+                    rgba(146, 207, 108, 0.6), /* Black color with 50% opacity */
+                    rgba(24, 28, 21, 0.7) /* Black color with 50% opacity */
+                   
+                ),
+                url('/background.jpg') no-repeat center center;
+                background-size: cover; // 
+                border-radius: 20px;
+                position: relative;
+              
+                p {
+                  text-align: center;
+                  font-size: 1.1rem;
+                  color: black;
+                  line-height: 25px;
+                }
+              
+                .line {
+                  width: 100%;
+                  border: 0.2px solid rgb(0, 0, 0);
+                }
+              
+                a {
+                  font-weight: 600;
+                  margin-bottom: 5px;
+                  text-decoration: none;
+                  color: black;
+                  width: 8.7rem;
+                  height: 1.5rem;
+                  border: 2px solid ;
+                  background-color: #c95107;
+                  &:hover {
+                    background-color: orange;
+                  }
+                }
+              
+                .bio {
+                  > * {
+                    display: block;
+                    text-align: center;
+                  }
+              
+                  > :nth-child(2) {
+                    font-size: 0.7rem;
+                    color: rgb(0, 0, 0);
+                  }
+            
+              
+              }
+            }
+    }
+    }
+}
